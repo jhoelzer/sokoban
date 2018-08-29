@@ -8,7 +8,21 @@ const map = [
     "▓B░XBBO▓",
     "▓░░░O░░▓",
     "▓▓▓▓▓▓▓▓"
-]
+];
+
+// const map2MapHarder = [
+//     "░░░░▓▓▓▓▓░░░░░░░░░░",
+//     "░░░░▓░░░▓░░░░░░░░░░",
+//     "░░░░▓B░░▓░░░░░░░░░░",
+//     "░░▓▓▓░░B▓▓░░░░░░░░░",
+//     "░░▓░░B░B░▓░░░░░░░░░",
+//     "▓▓▓░▓░▓▓░▓░░░▓▓▓▓▓▓",
+//     "▓░░░▓░▓▓░▓▓▓▓▓░░OO▓",
+//     "▓░B░░B░░░░░░░░░░OO▓",
+//     "▓▓▓▓▓░▓▓▓░▓S▓▓░░OO▓",
+//     "░░░░▓░░░░░▓▓▓▓▓▓▓▓▓",
+//     "░░░░▓▓▓▓▓▓▓░░░░░░░░"
+// ];
 
 const wallBlock = "▓";
 const spaceBlock = "░";
@@ -33,12 +47,14 @@ for (let rowIndex = 0; rowIndex < newMap.length; rowIndex++) {
     const rowDiv = document.createElement("div");
     rowDiv.className = "row";
     rowDiv.id = "row-" + rowIndex;
+
     for (let colIndex = 0; colIndex < mapRow.length; colIndex++) {
         const cell = document.createElement("div");
         cell.dataset.rowIndex = rowIndex;
         cell.dataset.colIndex = colIndex;
         cell.className = "cell";
         cell.id = "col-" + colIndex;
+
         if (mapRow[colIndex] === wallBlock) {
             cell.dataset.type = "wall";
             cell.classList.add("wall");
