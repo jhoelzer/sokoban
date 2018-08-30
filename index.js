@@ -10,19 +10,21 @@ const map = [
     "▓▓▓▓▓▓▓▓"
 ];
 
-// const map2MapHarder = [
-//     "░░░░▓▓▓▓▓░░░░░░░░░░",
-//     "░░░░▓░░░▓░░░░░░░░░░",
-//     "░░░░▓B░░▓░░░░░░░░░░",
-//     "░░▓▓▓░░B▓▓░░░░░░░░░",
-//     "░░▓░░B░B░▓░░░░░░░░░",
-//     "▓▓▓░▓░▓▓░▓░░░▓▓▓▓▓▓",
-//     "▓░░░▓░▓▓░▓▓▓▓▓░░OO▓",
-//     "▓░B░░B░░░░░░░░░░OO▓",
-//     "▓▓▓▓▓░▓▓▓░▓S▓▓░░OO▓",
-//     "░░░░▓░░░░░▓▓▓▓▓▓▓▓▓",
-//     "░░░░▓▓▓▓▓▓▓░░░░░░░░"
-// ];
+const map2MapHarder = [
+    "░░░░▓▓▓▓▓░░░░░░░░░░",
+    "░░░░▓░░░▓░░░░░░░░░░",
+    "░░░░▓B░░▓░░░░░░░░░░",
+    "░░▓▓▓░░B▓▓░░░░░░░░░",
+    "░░▓░░B░B░▓░░░░░░░░░",
+    "▓▓▓░▓░▓▓░▓░░░▓▓▓▓▓▓",
+    "▓░░░▓░▓▓░▓▓▓▓▓░░OO▓",
+    "▓░B░░B░░░░░░░░░░OO▓",
+    "▓▓▓▓▓░▓▓▓░▓S▓▓░░OO▓",
+    "░░░░▓░░░░░▓▓▓▓▓▓▓▓▓",
+    "░░░░▓▓▓▓▓▓▓░░░░░░░░"
+];
+
+let currentMap = map;
 
 const wallBlock = "▓";
 const spaceBlock = "░";
@@ -36,8 +38,8 @@ let player = undefined;
 const destination = document.getElementById("map");
 const boxDestination = document.getElementById("box");
 
-for (let i = 0; i < map.length; i++) {
-    let mapCol = map[i];
+for (let i = 0; i < currentMap.length; i++) {
+    let mapCol = currentMap[i];
     let newCol = mapCol.split("");
     newMap.push(newCol);
 }
@@ -180,3 +182,8 @@ document.addEventListener("keydown", (event) => {
     }
     winner();
 })
+
+function replay() {
+    location.reload();
+}
+

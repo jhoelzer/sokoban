@@ -8,6 +8,27 @@ body {
     align-items: center;
 }
 
+#titleButtons {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: rgb(79, 153, 118);
+    border: none;
+    color: white;
+    margin-left: 20px;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 h1, h2 {
     margin: 10px;
     color: rgb(79, 153, 118);
@@ -23,6 +44,7 @@ h1, h2 {
     background-color: #BADACB;
     border-radius: 50%;
     box-shadow: inset 0 0 20px rgb(23, 49, 38);
+    z-index: 2;
 }
 
 .wall {
@@ -43,12 +65,34 @@ h1, h2 {
     box-shadow: inset 0 0 10px #000000;
     background-color: rgb(241, 218, 3);
     border-radius: 10%;
+    z-index: 2;
 }
 
 .storage {
     width: 64px;
     height: 64px;
-    background-color: rgb(47, 85, 209);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+.storage::before, .storage::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 6px; /* cross thickness */
+    background-color: #213965;
+}
+
+.storage::before {
+    transform: rotate(45deg);
+}
+
+.storage::after {
+    transform: rotate(-45deg);
 }
 
 .completed {
@@ -57,4 +101,5 @@ h1, h2 {
     background-color: rgb(79, 153, 118);
     box-shadow: inset 0 0 10px #000000;
     border-radius: 10%;
+    z-index: 2;
 }
