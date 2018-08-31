@@ -44,6 +44,10 @@ for (let i = 0; i < currentMap.length; i++) {
     newMap.push(newCol);
 }
 
+function gamePlay() {
+    
+}
+
 for (let rowIndex = 0; rowIndex < newMap.length; rowIndex++) {
     let mapRow = newMap[rowIndex];
     const rowDiv = document.createElement("div");
@@ -186,4 +190,3 @@ document.addEventListener("keydown", (event) => {
 function replay() {
     location.reload();
 }
-
